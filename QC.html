@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .question p {
+            margin: 0 0 10px;
+            font-weight: bold;
+        }
+        label {
+            display: block;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 18px;
+            display: none;
+        }
+        #result.correct {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        #result.incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #3498db;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+    </style>
+</head>
+<body>
+<a href="index.html" class="back-button">Back</a>
+    <h1>CSS Quiz</h1>
+    <form id="quizForm">
+        <div class="question">
+            <p>1. CSS гэдэг нь юуны товчлол вэ?</p>
+            <label><input type="radio" name="q1" value="a"> Cascading Style Sheets</label>
+            <label><input type="radio" name="q1" value="b"> Creative Style System</label>
+            <label><input type="radio" name="q1" value="c"> Computer Style Sheets</label>
+            <label><input type="radio" name="q1" value="d"> Colorful Style Solution</label>
+        </div>
+        <div class="question">
+            <p>2. CSS-г анх хэн боловсруулсан бэ?</p>
+            <label><input type="radio" name="q2" value="a"> Tim Berners-Lee</label>
+            <label><input type="radio" name="q2" value="b"> Håkon Wium Lie</label>
+            <label><input type="radio" name="q2" value="c"> Brendan Eich</label>
+            <label><input type="radio" name="q2" value="d"> Bill Gates</label>
+        </div>
+        <div class="question">
+            <p>3. CSS-г HTML-д холбох зөв арга аль нь вэ?</p>
+            <label><input type="radio" name="q3" value="a"> &lt;style src=&quot;style.css&quot;&gt;</label>
+            <label><input type="radio" name="q3" value="b"> &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;</label>
+            <label><input type="radio" name="q3" value="c"> &lt;css href=&quot;style.css&quot;&gt;</label>
+            <label><input type="radio" name="q3" value="d"> &lt;script src=&quot;style.css&quot;&gt;</label>
+        </div>
+        <div class="question">
+            <p>4. Элементийн арын өнгийг тохируулах CSS шинж чанар аль нь вэ?</p>
+            <label><input type="radio" name="q4" value="a"> color</label>
+            <label><input type="radio" name="q4" value="b"> background-color</label>
+            <label><input type="radio" name="q4" value="c"> bg-color</label>
+            <label><input type="radio" name="q4" value="d"> back-color</label>
+        </div>
+        <div class="question">
+            <p>5. CSS-д элементийг төвд байрлуулах зөв арга аль нь вэ?</p>
+            <label><input type="radio" name="q5" value="a"> text-align: center;</label>
+            <label><input type="radio" name="q5" value="b"> align: center;</label>
+            <label><input type="radio" name="q5" value="c"> position: center;</label>
+            <label><input type="radio" name="q5" value="d"> center: true;</label>
+        </div>
+        <div class="question">
+            <p>6. CSS-д box-shadow шинж чанар юуг хийдэг вэ?</p>
+            <label><input type="radio" name="q6" value="a"> Элементийн хүрээ зурах</label>
+            <label><input type="radio" name="q6" value="b"> Элементийн сүүдэр нэмэх</label>
+            <label><input type="radio" name="q6" value="c"> Элементийг хөдөлгөөнтэй болгох</label>
+            <label><input type="radio" name="q6" value="d"> Элементийн өнгийг өөрчлөх</label>
+        </div>
+        <div class="question">
+            <p>7. CSS-д flexbox-г идэвхжүүлэх шинж чанар аль нь вэ?</p>
+            <label><input type="radio" name="q7" value="a"> display: flex;</label>
+            <label><input type="radio" name="q7" value="b"> flex: true;</label>
+            <label><input type="radio" name="q7" value="c"> layout: flex;</label>
+            <label><input type="radio" name="q7" value="d"> align: flex;</label>
+        </div>
+        <div class="question">
+            <p>8. CSS-д зургийн хэмжээг өөрчлөх шинж чанар аль нь вэ?</p>
+            <label><input type="radio" name="q8" value="a"> size</label>
+            <label><input type="radio" name="q8" value="b"> width ба height</label>
+            <label><input type="radio" name="q8" value="c"> scale</label>
+            <label><input type="radio" name="q8" value="d"> resize</label>
+        </div>
+        <div class="question">
+            <p>9. CSS-д :hover псевдо-классын үүрэг юу вэ?</p>
+            <label><input type="radio" name="q9" value="a"> Элемент дээр хулгана зөөхөд загвар өөрчлөгдөнө</label>
+            <label><input type="radio" name="q9" value="b"> Элементийг идэвхтэй болгоно</label>
+            <label><input type="radio" name="q9" value="c"> Элементийг нууна</label>
+            <label><input type="radio" name="q9" value="d"> Элементийг хөдөлгөөнтэй болгоно</label>
+        </div>
+        <div class="question">
+            <p>10. CSS-д margin шинж чанар юуг тодорхойлдог вэ?</p>
+            <label><input type="radio" name="q10" value="a"> Элементийн дотор талын зай</label>
+            <label><input type="radio" name="q10" value="b"> Элементийн гаднах зай</label>
+            <label><input type="radio" name="q10" value="c"> Элементийн хүрээний зузаан</label>
+            <label><input type="radio" name="q10" value="d"> Элементийн өнгө</label>
+        </div>
+        <div class="question">
+            <p>11. CSS-д position: absolute; юуг хийдэг вэ?</p>
+            <label><input type="radio" name="q11" value="a"> Элементийг баримт бичгийн урсгалаас гаргана</label>
+            <label><input type="radio" name="q11" value="b"> Элементийг хуудасны төвд байрлуулна</label>
+            <label><input type="radio" name="q11" value="c"> Элементийг хөдөлгөөнтэй болгоно</label>
+            <label><input type="radio" name="q11" value="d"> Элементийг нууна</label>
+        </div>
+        <div class="question">
+            <p>12. CSS-д font-size шинж чанар юуг тодорхойлдог вэ?</p>
+            <label><input type="radio" name="q12" value="a"> Фонтын хэлбэр</label>
+            <label><input type="radio" name="q12" value="b"> Фонтын хэмжээ</label>
+            <label><input type="radio" name="q12" value="c"> Фонтын өнгө</label>
+            <label><input type="radio" name="q12" value="d"> Фонтын зай</label>
+        </div>
+        <div class="question">
+            <p>13. CSS-д @media хэрэглээний зорилго юу вэ?</p>
+            <label><input type="radio" name="q13" value="a"> Хөдөлгөөнт эффект нэмэх</label>
+            <label><input type="radio" name="q13" value="b"> Хариуцлагатай загварчлал хийх</label>
+            <label><input type="radio" name="q13" value="c"> Фонтын загвар өөрчлөх</label>
+            <label><input type="radio" name="q13" value="d"> Зураг оруулах</label>
+        </div>
+        <div class="question">
+            <p>14. CSS-д border-radius шинж чанар юуг хийдэг вэ?</p>
+            <label><input type="radio" name="q14" value="a"> Хүрээний зузааныг өөрчлөх</label>
+            <label><input type="radio" name="q14" value="b"> Хүрээний буланг бөөрөнхий болгох</label>
+            <label><input type="radio" name="q14" value="c"> Хүрээний өнгийг өөрчлөх</label>
+            <label><input type="radio" name="q14" value="d"> Хүрээний хэлбэрийг өөрчлөх</label>
+        </div>
+        <div class="question">
+            <p>15. CSS-д display: none; юуг хийдэг вэ?</p>
+            <label><input type="radio" name="q15" value="a"> Элементийг төвд байрлуулна</label>
+            <label><input type="radio" name="q15" value="b"> Элементийг харагдахгүй болгоно</label>
+            <label><input type="radio" name="q15" value="c"> Элементийг хөдөлгөөнтэй болгоно</label>
+            <label><input type="radio" name="q15" value="d"> Элементийн өнгийг өөрчлөнө</label>
+        </div>
+        <div class="question">
+            <p>16. CSS-д z-index шинж чанар юуг тодорхойлдог вэ?</p>
+            <label><input type="radio" name="q16" value="a"> Элементийн хэмжээ</label>
+            <label><input type="radio" name="q16" value="b"> Элементийн давхаргын дараалал</label>
+            <label><input type="radio" name="q16" value="c"> Элементийн өнгө</label>
+            <label><input type="radio" name="q16" value="d"> Элементийн зай</label>
+        </div>
+        <div class="question">
+            <p>17. CSS-д transition шинж чанар юуг хийдэг вэ?</p>
+            <label><input type="radio" name="q17" value="a"> Элементийг нууна</label>
+            <label><input type="radio" name="q17" value="b"> Загварын өөрчлөлтийг жигд болгоно</label>
+            <label><input type="radio" name="q17" value="c"> Элементийг төвд байрлуулна</label>
+            <label><input type="radio" name="q17" value="d"> Фонтын хэлбэрийг өөрчлөнө</label>
+        </div>
+        <div class="question">
+            <p>18. CSS-д * сонгогч юуг заадаг вэ?</p>
+            <label><input type="radio" name="q18" value="a"> Зөвхөн эхний элементийг</label>
+            <label><input type="radio" name="q18" value="b"> Бүх элементийг</label>
+            <label><input type="radio" name="q18" value="c"> Зөвхөн div элементийг</label>
+            <label><input type="radio" name="q18" value="d"> Зөвхөн классын элементийг</label>
+        </div>
+        <div class="question">
+            <p>19. CSS-д opacity шинж чанар юуг тодорхойлдог вэ?</p>
+            <label><input type="radio" name="q19" value="a"> Элементийн хэмжээ</label>
+            <label><input type="radio" name="q19" value="b"> Элементийн тунгалаг байдал</label>
+            <label><input type="radio" name="q19" value="c"> Элементийн өнгө</label>
+            <label><input type="radio" name="q19" value="d"> Элементийн хүрээ</label>
+        </div>
+        <div class="question">
+            <p>20. CSS-д grid-template-columns шинж чанар юуг тодорхойлдог вэ?</p>
+            <label><input type="radio" name="q20" value="a"> Сүлжээний баганын хэмжээ ба тоо</label>
+            <label><input type="radio" name="q20" value="b"> Сүлжээний мөрийн хэмжээ</label>
+            <label><input type="radio" name="q20" value="c"> Сүлжээний өнгө</label>
+            <label><input type="radio" name="q20" value="d"> Сүлжээний хүрээ</label>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        const correctAnswers = {
+            q1: 'a',
+            q2: 'b',
+            q3: 'b',
+            q4: 'b',
+            q5: 'a',
+            q6: 'b',
+            q7: 'a',
+            q8: 'b',
+            q9: 'a',
+            q10: 'b',
+            q11: 'a',
+            q12: 'b',
+            q13: 'b',
+            q14: 'b',
+            q15: 'b',
+            q16: 'b',
+            q17: 'b',
+            q18: 'b',
+            q19: 'b',
+            q20: 'a'
+        };
+
+        document.getElementById('quizForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let score = 0;
+            const formData = new FormData(this);
+            const resultDiv = document.getElementById('result');
+
+            for (let i = 1; i <= 20; i++) {
+                const answer = formData.get(`q${i}`);
+                if (answer === correctAnswers[`q${i}`]) {
+                    score++;
+                }
+            }
+
+            resultDiv.style.display = 'block';
+            resultDiv.textContent = `Your score: ${score}/20`;
+            if (score >= 15) {
+                resultDiv.className = 'correct';
+            } else {
+                resultDiv.className = 'incorrect';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Beginner Tutorial</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #f4f7fa;
+            color: #333;
+        }
+        h1 {
+            color: #1a5276;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+            margin-top: 40px;
+            border-left: 5px solid #3498db;
+            padding-left: 10px;
+        }
+        p {
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+        nav {
+            background-color: #3498db;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 5px 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #2980b9;
+        }
+        code {
+            background-color: #ecf0f1;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+        .section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #3498db;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .highlight {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-button">Back</a>
+    <h1>CSS Beginner Tutorial</h1>
+    <p style="text-align: center; font-style: italic;">A step-by-step guide to CSS basics. Go here if you’re comfortable with basic HTML.</p>
+
+    <nav>
+        <ul>
+            <li><a href="#applying-css">Applying CSS</a></li>
+            <li><a href="#selectors-properties">Selectors, Properties, Values</a></li>
+            <li><a href="#colors">Colors</a></li>
+            <li><a href="#text">Text</a></li>
+            <li><a href="#margins-padding">Margins and Padding</a></li>
+            <li><a href="#borders">Borders</a></li>
+            <li><a href="#putting-together">Putting It All Together</a></li>
+        </ul>
+    </nav>
+
+    <div class="section" id="applying-css">
+        <h2>Applying CSS</h2>
+        <p>CSS can be applied to HTML in three ways: <strong>inline</strong>, <strong>internal</strong>, and <strong>external</strong>.</p>
+        <p><strong>Inline CSS</strong> uses the <code>style</code> attribute in HTML tags, e.g., <code>&lt;p style="color: blue;"&gt;Text&lt;/p&gt;</code>. It’s quick but hard to maintain.</p>
+        <p><strong>Internal CSS</strong> lives in a <code>&lt;style&gt;</code> tag in the <code>&lt;head&gt;</code> section. Example:</p>
+        <div class="highlight">
+            <code>
+                &lt;style&gt;<br>
+                  p { color: blue; }<br>
+                &lt;/style&gt;
+            </code>
+        </div>
+        <p><strong>External CSS</strong> uses a separate <code>.css</code> file linked with <code>&lt;link&gt;</code>. Example:</p>
+        <div class="highlight">
+            <code>&lt;link rel="stylesheet" href="styles.css"&gt;</code>
+        </div>
+        <p>External CSS is best for larger projects due to reusability.</p>
+    </div>
+
+    <div class="section" id="selectors-properties">
+        <h2>Selectors, Properties, and Values</h2>
+        <p>CSS rules consist of <strong>selectors</strong> (which target HTML elements), <strong>properties</strong> (what to style), and <strong>values</strong> (how to style it). Example:</p>
+        <div class="highlight">
+            <code>
+                p {<br>
+                  color: blue;<br>
+                }
+            </code>
+        </div>
+        <p>Here, <code>p</code> is the selector, <code>color</code> is the property, and <code>blue</code> is the value. Common selectors include element names (<code>p</code>, <code>h1</code>), classes (<code>.class-name</code>), and IDs (<code>#id-name</code>).</p>
+    </div>
+
+    <div class="section" id="colors">
+        <h2>Colors</h2>
+        <p>CSS supports colors in several formats: <strong>named colors</strong> (e.g., <code>blue</code>), <strong>hex</strong> (e.g., <code>#3498db</code>), <strong>RGB</strong> (e.g., <code>rgb(52, 152, 219)</code>), and <strong>RGBA</strong> for opacity (e.g., <code>rgba(52, 152, 219, 0.5)</code>).</p>
+        <div class="highlight">
+            <code>
+                h1 {<br>
+                  color: #3498db;<br>
+                }
+            </code>
+        </div>
+        <p>Use colors to enhance visual appeal and ensure readability.</p>
+    </div>
+
+    <div class="section" id="text">
+        <h2>Text</h2>
+        <p>CSS can style text with properties like <code>font-size</code>, <code>font-family</code>, <code>font-weight</code>, and <code>text-align</code>. Example:</p>
+        <div class="highlight">
+            <code>
+                p {<br>
+                  font-size: 16px;<br>
+                  font-family: Arial, sans-serif;<br>
+                  text-align: center;<br>
+                }
+            </code>
+        </div>
+        <p>Experiment with text properties to improve readability and aesthetics.</p>
+    </div>
+
+    <div class="section" id="margins-padding">
+        <h2>Margins and Padding</h2>
+        <p><strong>Margins</strong> control the space <em>outside</em> an element, while <strong>padding</strong> controls the space <em>inside</em> an element. Example:</p>
+        <div class="highlight">
+            <code>
+                div {<br>
+                  margin: 20px;<br>
+                  padding: 15px;<br>
+                }
+            </code>
+        </div>
+        <p>Use margins and padding to create breathing room and improve layout.</p>
+    </div>
+
+    <div class="section" id="borders">
+        <h2>Borders</h2>
+        <p>Borders go around elements and are styled with <code>border</code> properties, like <code>border-width</code>, <code>border-style</code>, and <code>border-color</code>. Example:</p>
+        <div class="highlight">
+            <code>
+                div {<br>
+                  border: 2px solid #3498db;<br>
+                }
+            </code>
+        </div>
+        <p>Borders help define boundaries and highlight elements.</p>
+    </div>
+
+    <div class="section" id="putting-together">
+        <h2>Putting It All Together</h2>
+        <p>Combine selectors, colors, text styles, margins, padding, and borders to style a webpage. Start with a simple HTML structure and apply CSS to make it visually appealing.</p>
+        <div class="highlight">
+            <p><strong>Recap:</strong> CSS is about styling HTML with selectors, properties, and values. Test your styles in a browser and keep experimenting!</p>
+        </div>
+        <p>Ready for more? Explore advanced CSS like flexbox, grid, or animations, and consider JavaScript for interactivity.</p>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
